@@ -14,7 +14,8 @@
     a {
       display: block;
       padding: 15px 0;
-      &:hover, &.active {
+      &:hover,
+      &.active {
         color: $white;
       }
     }
@@ -31,11 +32,21 @@
   &__social {
     padding-top: 45px;
   }
+
+  &__close {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    svg path {
+      stroke: $white;
+    }
+  }
 }
 
 .mobile-menu-is-shown {
   overflow: hidden;
-  
+
   &::before {
     display: block;
   }

@@ -1,16 +1,18 @@
-//import './scss/style.scss'
-
 const $ = require('jquery');
 const scrollSpy = require('scrollspy-js');
-
-require('slick-carousel');
+const slick = require('slick-carousel');
 
 $(() => {
-  const body = $('html, body');
+  
+  const bodyOrHtml = $('html, body');
 
   $('.header__mobile-menu').click((e) => {
     $('body').addClass('mobile-menu-is-shown');
     return false;
+  });
+
+  $('.mobile-menu__close').click((e) => {
+    $('body').removeClass('mobile-menu-is-shown');
   });
 
   $('.mobile-menu').click((e) => {
@@ -24,7 +26,7 @@ $(() => {
   $('.hero__more').click((e) => {
     e.preventDefault();
     const target = $($(e.target).attr('href'));
-    body.animate({ scrollTop: target.offset().top }, 500, 'linear');
+    bodyOrHtml.animate({ scrollTop: target.offset().top }, 500, 'linear');
   })
 
   $(window).scroll((e) => {
@@ -38,14 +40,13 @@ $(() => {
 
   $(".to-top").click((e) => {
     e.preventDefault();
-    body.animate({ scrollTop: 0 }, 500, 'linear');
+    bodyOrHtml.animate({ scrollTop: 0 }, 500, 'linear');
   });
 
   const spyTop = new scrollSpy('#scrollspyTop', {
     nav: '.menu__item a',
     className: 'active'
   });
-
 
   const widgetsSlider = $('.widgets-slider').slick({
     dots: false,
@@ -65,13 +66,7 @@ $(() => {
   $('.widgets-slider__item').click((e) => {
     console.log('click');
     const that = $(e.currentTarget);
-
     widgetsSlider.slick('slickGoTo', that.data('index'));
   });
-
-
-
-
-
 
 });
