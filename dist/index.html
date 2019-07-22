@@ -5,17 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Weather app">
+  <meta name="keywords" content="Weather,Weather app">
   <title>Weather app</title>
   <link rel="stylesheet" href="css/app.css">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 
-<body>
+<body style="position: relative;">
   <div class="header">
     <div class="container">
       <div class="row">
-        <div class="col-lg-2 d-flex">
+        <div class="col-xl-2 d-flex">
           <div class="header__mobile-menu">
             <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 32 32">
               <path d="M0 3h32v3H0zM0 14.5h32v3H0zM0 26h32v3H0z" /></svg>
@@ -42,10 +44,25 @@
     <!-- !header -->
   </div>
 
+  <!-- mobile menu -->
+  <div class="mobile-menu">
+    <a href="#" class="mobile-menu__logo logo"><span class="color-orange">Fun </span> <span
+        class="color-primary">Weather.</span></a>
+    <div class="mobile-menu__item"><a href="#">Home</a></div>
+    <div class="mobile-menu__item"><a href="#">Features</a></div>
+    <div class="mobile-menu__item"><a href="#">Review</a></div>
+    <div class="mobile-menu__item"><a href="#">Downloads</a></div>
+    <ul class="mobile-menu__social social-links menu">
+      <li class="menu__item"><a href="#"><img src="images/facebook.png" alt=""></a> </li>
+      <li class="menu__item"><a href="#"><img src="images/insta.png" alt=""></a></a></li>
+      <li class="menu__item"><a href="#"><img src="images/twitter.png" alt=""></a></a></li>
+    </ul>
+  </div>
+
   <div class="hero" id="home">
-    <div class="container hero__inner">
-      <div class="row">
-        <div class="col hero__description">
+    <div class="container ">
+      <div class="row hero__inner">
+        <div class="col-xl-6 hero__description">
           <div class="hero__heading">
             Get the most fun
             weather app
@@ -82,31 +99,38 @@
         <h4 class="section__subheading">Only necessary</h4>
 
         <div class="row features">
-          <div class="features__item features__item--usability  col-4">
-            <div class="features__heading">
-              Usability
+          <div class="col-xl-4 col-lg-6">
+            <div class="features__item features__item--usability">
+              <div class="features__heading">
+                Usability
+              </div>
+              <p class="features__subheading">
+                Sometimes the simplest things are the hardest to find. So we created a new line for everyday life
+              </p>
             </div>
-            <p class="features__subheading">
-              Sometimes the simplest things are the hardest to find. So we created a new line for everyday life
-            </p>
-          </div>
-          <div class="features__item features__item--parallax  col-4">
-            <div class="features__heading">
-              Parallax effect
-            </div>
-            <p class="features__subheading">
-              Sometimes the simplest things are the hardest to find. So we created a new line for everyday life
-            </p>
-          </div>
-          <div class="features__item features__item--colors  col-4">
-            <div class="features__heading">
-              Unlimited colors
-            </div>
-            <p class="features__subheading">
-              Sometimes the simplest things are the hardest to find. So we created a new line for everyday life
-            </p>
           </div>
 
+          <div class="col-xl-4 col-lg-6">
+            <div class="features__item features__item--parallax">
+              <div class="features__heading">
+                Parallax effect
+              </div>
+              <p class="features__subheading">
+                Sometimes the simplest things are the hardest to find. So we created a new line for everyday life
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-lg-6">
+            <div class="features__item features__item--colors">
+              <div class="features__heading">
+                Unlimited colors
+              </div>
+              <p class="features__subheading">
+                Sometimes the simplest things are the hardest to find. So we created a new line for everyday life
+              </p>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -138,10 +162,15 @@
         <h4 class="section__subheading">The brightest images</h4>
 
         <div class="screenshot screenshot--cloudy row">
-          <div class="screenshot__image col-6">
-            <img src="images/cloudy.png" class="screenshot_screen">
-            <div class="screenshot__circle circle circle--big circle--yellow">CLOUDY</div>
-            <div class="screenshot__circle circle circle--big circle--blue"><span class="circle__degree">15</span></div>
+          <div class="screenshot__image col-xl-6">
+            <div class="screenshot__screen">
+              <img src="images/cloudy_text.png" class="screenshot__text" alt="">
+              <img src="images/cloudy.png" alt="">
+              <div class="screenshot__circle circle circle--big circle--yellow">CLOUDY</div>
+              <div class="screenshot__circle circle circle--big circle--blue"><span class="circle__degree">15</span>
+              </div>
+            </div>
+
           </div>
           <div class="screenshot__description col ">
             <div class="screenshot__heading-icon"></div>
@@ -156,7 +185,7 @@
           </div>
         </div>
 
-        <div class="screenshot screenshot--sunny row">
+        <div class="screenshot screenshot--sunny row flex-column-reverse flex-xl-row">
           <div class="screenshot__description col">
             <div class="screenshot__heading-icon"></div>
             <div class="screenshot__heading">
@@ -168,20 +197,26 @@
             </div>
             <div class="screenshot__weather-icon"></div>
           </div>
-          <div class="screenshot__image col-6">
-            <img src="images/sunny.png" class="screenshot_screen">
-            <div class="screenshot__circle circle circle--big circle--orange-light">SUNNY</div>
-            <div class="screenshot__circle circle circle--big circle--orange"><span class="circle__degree">31</span>
+          <div class="screenshot__image col-xl-6">
+            <div class="screenshot__screen">
+              <img src="images/sunny_text.png" class="screenshot__text">
+              <img src="images/sunny.png">
+              <div class="screenshot__circle circle circle--big circle--orange-light">SUNNY</div>
+              <div class="screenshot__circle circle circle--big circle--orange"><span class="circle__degree">31</span>
+              </div>
             </div>
           </div>
         </div>
 
 
         <div class="screenshot screenshot--rainy row">
-          <div class="screenshot__image col-6">
-            <img src="images/rainy.png" class="screenshot_screen">
-            <div class="screenshot__circle circle circle--big circle--green">rainy</div>
-            <div class="screenshot__circle circle circle--big circle--purple"><span class="circle__degree">9</span>
+          <div class="screenshot__image col-xl-6">
+            <div class="screenshot__screen">
+              <img src="images/rainy_text.png" class="screenshot__text">
+              <img src="images/rainy.png">
+              <div class="screenshot__circle circle circle--big circle--green">rainy</div>
+              <div class="screenshot__circle circle circle--big circle--purple"><span class="circle__degree">9</span>
+              </div>
             </div>
           </div>
           <div class="screenshot__description col ">
@@ -205,7 +240,7 @@
         <h4 class="section__subheading">Reviews</h4>
 
         <div class="row">
-          <div class="col review">
+          <div class="col-xl-6 review">
             <div class="review__body">
               What art offers is space - a certain breathing room for the spirit.
             </div>
@@ -213,7 +248,7 @@
               John Updike
             </div>
           </div>
-          <div class="col review">
+          <div class="col-xl-6 review">
             <div class="review__body">
               We do not see nature with our eyes, but with our understandings and our hearts.
             </div>
@@ -224,7 +259,7 @@
         </div>
 
         <div class="row">
-          <div class="col review">
+          <div class="col-xl-6 review">
             <div class="review__body">
               The only courage that matters is the kind that gets you from one moment to the next.
             </div>
@@ -232,7 +267,7 @@
               Mignon McLaughlin
             </div>
           </div>
-          <div class="col review">
+          <div class="col-xl-6 review">
             <div class="review__body">
               No man has a good enough memory to be a successful liar.
             </div>
@@ -249,7 +284,7 @@
     <div class="section section--download" id="downloadsSection">
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-xl-6">
             <h3 class="section__heading">How to Download the app?</h3>
             <p class="section__subheading">Just download the app from the store.
               Simple, nice and user-friendly application of theweather. Only relevant and useful information.</p>
@@ -258,7 +293,7 @@
               <a href="#" class="section__download-btn section__download-btn--appstore"></a>
             </div>
           </div>
-          <div class="col ovh">
+          <div class="col-xl-6 section__phones-container">
             <img src="images/phones.png" class="section__phones" alt="download">
           </div>
         </div>
@@ -270,11 +305,11 @@
   <div class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-2">
+        <div class="col-lg-2">
           <a href="#" class="footer__logo logo"><span class="color-orange">Fun </span> <span
               class="color-primary">Weather.</span></a>
         </div>
-        <div class="col d-flex align-items-center justify-content-center">
+        <div class="col-lg-8 footer__menu-container">
           <ul class="footer__menu menu ">
             <li class="menu__item"><a href="#home">Home</a></li>
             <li class="menu__item"><a href="#featuresSection">Features</a></li>
@@ -282,7 +317,7 @@
             <li class="menu__item"><a href="#downloadsSection">Downloads</a></li>
           </ul>
         </div>
-        <div class="col-2">
+        <div class="col">
           <ul class="footer__social-links social-links menu">
             <li class="menu__item"><a href="#"><img src="images/facebook.png" alt=""></a> </li>
             <li class="menu__item"><a href="#"><img src="images/insta.png" alt=""></a></a></li>
