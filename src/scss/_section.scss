@@ -1,0 +1,107 @@
+.section {
+  padding: 70px 0;
+  $parent: &;
+
+  &--widgets {
+    #{$parent}__subheading {
+      margin-bottom: 0;
+    }
+  }
+
+  &--download {
+    position: relative;
+    overflow: hidden;
+
+    background-color: $primary;
+
+    background-repeat: repeat;
+    background-image: url(../images/bg-lines.png);
+    background-size: auto;
+    background-position: -1px;
+    /* background-size: auto;
+    background-image: url("../images/phones.png");
+    background-position: calc(100% - 200px) 100%; */
+
+    padding: 125px 0;
+
+    & > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #{$parent} {
+      &__heading,
+      &__subheading {
+        color: $white;
+        text-align: left;
+      }
+
+      &__subheading {
+        margin-bottom: 30px;
+      }
+
+      &__downloads {
+      }
+
+      &__download-btn {
+        display: inline-block;
+        @extend %background-image;
+
+        &--google-play {
+          width: 139px;
+          height: 45px;
+          background-image: url("../images/google_play.png");
+        }
+
+        &--appstore {
+          width: 147px;
+          height: 45px;
+          background-image: url("../images/appstore.png");
+        }
+
+        &:not(:last-of-type) {
+          margin-right: 5px;
+        }
+      }
+
+      &__phones-container {
+        @include media-breakpoint-down(lg) {
+          display: none;
+        }
+
+      }
+
+      &__phones {
+        position: absolute;
+        top: -33px;
+        right: -150px;
+      }
+    }
+  }
+
+  &__heading,
+  &__subheading {
+    text-align: center;
+  }
+  &__heading {
+    color: $primary;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+
+  &__subheading {
+    color: $text-muted;
+    font-size: 18px;
+    margin-bottom: 130px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 75px;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 35px 0;
+  }
+}

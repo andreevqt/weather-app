@@ -1,0 +1,134 @@
+.screenshot {
+  $parent: &;
+  &__heading {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 40px;
+  }
+
+  &__subheading {
+    line-height: 1.75;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  &__circle {
+    position: absolute;
+    &:nth-of-type(1) {
+      top: 167px;
+      left: 235px; 
+      color: $white;
+    }
+
+    .circle__degree::after {
+      right: -12px;
+    }
+
+    &:nth-of-type(2) {
+      font-size: 30px;
+      right: 265px;
+      bottom: 137px;
+      color: $white;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: -39px;
+    left: 155px;
+    z-index: -1;
+  }
+
+  &--cloudy {
+    #{$parent} {
+
+      &__heading-icon {
+        background-image: url("../images/clouds_heading_icon.png");
+      }
+
+      &__weather-icon {
+        background-image: url("../images/weather_icon.png");
+      }
+    }
+  }
+
+  &--sunny {
+    #{$parent} {
+
+      &__heading-icon {
+        width: 62px;
+        height: 62px;
+        background-image: url("../images/sunny_heading_icon.png");
+      }
+
+      &__weather-icon {
+        background-image: url("../images/weather_icon.png");
+      }
+    }
+  }
+
+  &--rainy {
+    #{$parent} {
+
+      &__heading-icon {
+        width: 137px;
+        height: 63px;
+        background-image: url("../images/rainy_heading_icon.png");
+      }
+
+      &__weather-icon {
+        background-image: url("../images/weather_icon.png");
+      }
+    }
+  }
+
+  &__image {
+    padding-left: 115px;
+    padding-top: 36px;
+    padding-bottom: 60px;
+
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 15px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &__heading-icon {
+    @extend %background-image;
+    width: 121px;
+    height: 63px;
+    margin-bottom: 50px;
+  }
+
+  &__weather-icon {
+    @extend %background-image;
+    width: 173px;
+    height: 82px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media-breakpoint-down(lg) {
+      align-items: center;
+    }
+  }
+
+  &__screen {
+    position: relative;
+    // @extend %background-image;
+    width: 290px;
+    height: 605px;
+
+  }
+}

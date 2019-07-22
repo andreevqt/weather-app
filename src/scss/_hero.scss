@@ -1,0 +1,144 @@
+.hero {
+  padding: 100px 0;
+  position: relative;
+  color: $white;
+
+  background-color: $primary;
+
+  &__heading {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+
+  &__subheading {
+    line-height: 1.83;
+    margin-bottom: 60px;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__pictures {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  &__phone {
+    width: 290px;
+    height: auto;
+  }
+
+  &__circle {
+    &:nth-of-type(1) {
+      position: absolute;
+      left: 0;
+      top: 300px;
+    }
+
+    &:nth-of-type(2) {
+      position: absolute;
+      right: 70px;
+      top: 85px;
+    }
+
+    &:nth-of-type(3) {
+      position: absolute;
+      font-size: 16px;
+      right: 0;
+      top: 268px;
+    }
+
+    &:nth-of-type(4) {
+      position: absolute;
+      right: 50px;
+      bottom: -30px;;
+    }
+  }
+
+  &::before {
+    @extend %background-image;
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    height: 423px;
+    background-image: url("../images/wave.png");
+  }
+
+  &::after {
+    @extend %background-image;
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 0;
+    bottom: -59px;
+    left: 0;
+    right: 0;
+    height: 59px;
+
+    background-image: url("../images/bg.png");
+    content: "";
+  }
+
+  &__btn {
+    font-weight: 700;
+    line-height: 1;
+    color: $white;
+    padding: 20px 40px;
+    margin-bottom: 12px;
+    $features-bg-color: #4466c9;
+    $download-bg-color: #fc6a42;
+
+
+    &:not(:last-of-type) {
+      margin-right: 12px;
+    }
+
+    &--features {
+      @include button-variant($features-bg-color, $features-bg-color);
+    }
+
+    &--download {
+      @include button-variant($download-bg-color, $download-bg-color);
+    }
+  }
+
+  &__more {
+    width: 49px;
+    height: 49px;
+    @extend %background-image;
+    content: '';
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    bottom:  calc(-49px / 2);
+    right: calc(50% - 49px / 2);
+    box-shadow: 0px 2px 12px rgba($black, 0.5);
+    background-image: url('../images/chevron-down.png');
+    background-size: 9px 5px;
+    border-radius: 50%;
+    background-color: $white;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-top: 25px;
+  }
+}

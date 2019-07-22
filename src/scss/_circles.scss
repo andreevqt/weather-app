@@ -1,0 +1,83 @@
+.circle {
+  border-radius: 50%;
+
+  font-weight: 700;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-transform: uppercase;
+
+  &--yellow {
+    color: #648cff;
+    background-color: #fcec64;
+  }
+
+  &--dark-blue {
+    color: $white;
+    background-color: #4466c9;
+  }
+
+  &--orange {
+    color: $white;
+    background-color: #fc6a42;
+  }
+
+  &--white {
+    color: #648cff;
+    background-color: #ffffff;
+  }
+
+  &--blue {
+    color: $white;
+    background-color: $primary;
+  }
+
+  &--orange-light {
+    background-color: #f2a14e;
+  }
+
+  &--green {
+    color: $white;
+    background-color: #b8faee;
+  }
+
+  &--purple {
+    color: $white;
+    background-color: #7693c8;
+  }
+
+  
+
+  &--big {
+    width: 90px;
+    height: 90px;
+  }
+
+  &--very-big {
+    width: 94px;
+    height: 94px;
+  }
+
+  &--small {
+    width: 56px;
+    height: 56px;
+  }
+
+  &__degree {
+    display: inline-block;
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -9px;
+      content: '°';
+    }
+  }
+
+  
+}

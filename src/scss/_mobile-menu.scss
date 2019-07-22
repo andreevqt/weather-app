@@ -1,0 +1,45 @@
+.mobile-menu {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  width: 300px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: $footer-bg;
+  color: $footer-color;
+  padding: 100px 40px;
+
+  &__item {
+    a {
+      display: block;
+      padding: 15px 0;
+      &:hover, &.active {
+        color: $white;
+      }
+    }
+
+    &:not(:last-child) a {
+      border-bottom: 1px solid #434769;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__social {
+    padding-top: 45px;
+  }
+}
+
+.mobile-menu-is-shown {
+  overflow: hidden;
+  
+  &::before {
+    display: block;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}

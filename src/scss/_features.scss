@@ -1,0 +1,47 @@
+.features {
+  &__item {
+    position: relative;
+    padding-left: 100px;
+    &::before {
+      @extend %background-image;
+      background-size: contain;
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 80px;
+      height: 62px;
+    }
+
+    &--usability {
+      &::before {
+        background-image: url("../images/diamond.png");
+      }
+    }
+    &--parallax {
+      &::before {
+        background-image: url("../images/paralax.png");
+      }
+    }
+    &--colors {
+      &::before {
+        background-image: url("../images/colors.png");
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__heading {
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 25px;
+  }
+
+  &__subheading {
+    color: $text-muted;
+    line-height: 1.9375;
+    font-size: 16px;
+  }
+}

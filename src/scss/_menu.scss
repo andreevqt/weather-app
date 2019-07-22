@@ -1,0 +1,14 @@
+.menu {
+  @extend %reset-list;
+
+  &__item {
+    &:not(:last-of-type) {
+      padding-right: 80px;
+    }
+  }
+
+  .active {
+    color: $white;
+  }
+
+}
